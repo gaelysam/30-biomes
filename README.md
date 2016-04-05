@@ -16,4 +16,4 @@ The values are arbitrary units that are generally between 0 and 100 but might ex
 It was taken from GeoGebra, with the file `30-biomes.ggb` (GeoGebra diagram).
 
 ## Data structure
-The properties of each biome are stored in `biomes.csv`. You would find it awfully unreadable if you open it with a text editor. Actually you should open it with a spreadsheet software like Calc or Excel. To modify it, simply sodify the cells and save the file with the same format.
+The properties of each biome are stored in `biomes.csv`. You would find it awfully unreadable if you open it with a text editor. Actually you should open it with a spreadsheet software like Calc or Excel. To modify it, simply modify the cells and save the file with the same format.
