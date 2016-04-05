@@ -92,7 +92,7 @@ for length = 5, 1, -1 do
 			octaves = 3,
 			persist = 0.6
 		},
-		biomes = {"coniferous_forest", "deciduous_forest", "mixed_forest", "cold_deciduous_forest", "low_deciduous_forest", "hot_deciduous_forest", "bushes", "hot_pine_forest", "desert_stone_grasslands"},
+		biomes = {"coniferous_forest", "deciduous_forest", "mixed_forest", "cold_deciduous_forest", "orchard", "hot_deciduous_forest", "bushes", "hot_pine_forest", "desert_stone_grasslands"},
 		y_min = 1,
 		y_max = 31000,
 		decoration = "default:grass_"..length,
@@ -156,7 +156,7 @@ for length = 5, 1, -1 do
 	})
 end
 
--- Apple tree
+-- Apple tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass"},
@@ -169,14 +169,47 @@ minetest.register_decoration({
 		octaves = 3,
 		persist = 0.66
 	},
-	biomes = {"deciduous_forest", "cold_deciduous_forest", "low_deciduous_forest", "hot_deciduous_forest"},
+	biomes = {"deciduous_forest", "cold_deciduous_forest", "orchard", "hot_deciduous_forest"},
 	y_min = 1,
 	y_max = 31000,
 	schematic = minetest.get_modpath("default").."/schematics/apple_tree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
--- Rarer apple tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.0018,
+		scale = 0.0011,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"deciduous_forest", "cold_deciduous_forest", "orchard", "hot_deciduous_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:tree", param2 = 12, prob = 191},
+			{name = "default:tree", param2 = 12},
+			{name = "default:tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_brown", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Rarer apple tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass"},
@@ -196,7 +229,40 @@ minetest.register_decoration({
 	flags = "place_center_x, place_center_z",
 })
 
--- Jungle tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.001,
+		scale = 0.001,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 45,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"semi-tropical_forest", "mixed_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:tree", param2 = 12, prob = 191},
+			{name = "default:tree", param2 = 12},
+			{name = "default:tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_brown", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Jungle tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass", "default:dirt"},
@@ -217,7 +283,40 @@ minetest.register_decoration({
 	rotation = "random",
 })
 
--- Rarer jungle tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_grass", "default:dirt"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.045,
+		scale = -0.02,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"rainforest", "mangrove"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:jungletree", param2 = 12, prob = 191},
+			{name = "default:jungletree", param2 = 12},
+			{name = "default:jungletree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_brown", prob = 127},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Rarer jungle tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass", "default:dirt"},
@@ -238,7 +337,40 @@ minetest.register_decoration({
 	rotation = "random",
 })
 
--- Pine tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_grass", "default:dirt"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.015,
+		scale = -0.01,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"semi-tropical_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:jungletree", param2 = 12, prob = 191},
+			{name = "default:jungletree", param2 = 12},
+			{name = "default:jungletree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_brown", prob = 127},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Pine tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
@@ -258,7 +390,40 @@ minetest.register_decoration({
 	flags = "place_center_x, place_center_z",
 })
 
--- Rarer pine tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.0018,
+		scale = 0.0011,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"taiga", "coniferous_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:pine_tree", param2 = 12, prob = 191},
+			{name = "default:pine_tree", param2 = 12},
+			{name = "default:pine_tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_red", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Rarer pine tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
@@ -278,7 +443,40 @@ minetest.register_decoration({
 	flags = "place_center_x, place_center_z",
 })
 
--- Acacia tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.001,
+		scale = -0.001,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"mixed_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:pine_tree", param2 = 12, prob = 191},
+			{name = "default:pine_tree", param2 = 12},
+			{name = "default:pine_tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_red", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Acacia tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_dry_grass"},
@@ -299,7 +497,37 @@ minetest.register_decoration({
 	rotation = "random",
 })
 
--- Aspen tree
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_dry_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = 0.001,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"savanna", "red_savanna"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 2, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:acacia_tree", param2 = 12, prob = 191},
+			{name = "default:acacia_tree", param2 = 12},
+			{name = "default:acacia_tree", param2 = 12, prob = 127},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Aspen tree and log
 minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass"},
@@ -317,6 +545,39 @@ minetest.register_decoration({
 	y_max = 31000,
 	schematic = minetest.get_modpath("default").."/schematics/aspen_tree.mts",
 	flags = "place_center_x, place_center_z",
+	rotation = "random",
+})
+
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.0,
+		scale = -0.0075,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"cold_deciduous_forest", "mixed_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:aspen_tree", param2 = 12},
+			{name = "default:aspen_tree", param2 = 12},
+			{name = "default:aspen_tree", param2 = 12, prob = 127},
+			{name = "flowers:mushroom_red", prob = 63},
+			{name = "flowers:mushroom_brown", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
 	rotation = "random",
 })
 

@@ -392,7 +392,7 @@ minetest.register_biome({
 
 -- 28
 minetest.register_biome({
-	name = "low_deciduous_forest",
+	name = "orchard",
 	node_top = "default:dirt_with_grass",
 	depth_top = 1,
 	node_filler = "default:dirt",
