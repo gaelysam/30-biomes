@@ -19,7 +19,8 @@ minetest.register_node("biomes:mud", {
 	sounds = default.node_sound_dirt_defaults(),
 })
 
-for line in io.lines(path .. "/biomes.csv") do
+local file = io.open(path .. "/biomes.csv", "r")
+for line in file:lines() do
 	local attribs = line:split(",", true)
 	local name, stone, fill, top, dust, sea, river, ymin, ymax, heat, humidity = unpack(attribs)
 
@@ -67,6 +68,8 @@ for line in io.lines(path .. "/biomes.csv") do
 		print("Biome \"" .. name .. "\" registered with ID=" .. id .. ", temperature " .. biome.heat_point .. ", humidity " .. biome.humidity_point .. ".")
 	end
 end
+
+file:close()
 
 --dofile(path .. "/main_biomes.lua")
 --dofile(path .. "/beach_biomes.lua")
