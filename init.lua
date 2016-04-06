@@ -1,7 +1,7 @@
 local path = minetest.get_modpath("biomes")
 
-minetest.clear_registered_biomes()
 minetest.clear_registered_decorations()
+minetest.clear_registered_biomes()
 
 minetest.register_node("biomes:mud", {
 	description = "Mud",
@@ -29,7 +29,7 @@ for line in file:lines() do
 		local biome = {name=name}
 
 		if stone and #stone > 0 then
-			biome.stone = stone
+			biome.node_stone = stone
 		end
 
 		if fill and #fill > 0 then
