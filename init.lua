@@ -22,7 +22,7 @@ minetest.register_node("biomes:mud", {
 local file = io.open(path .. "/biomes.csv", "r")
 for line in file:lines() do
 	local attribs = line:split(",", true)
-	local name, stone, fill, top, dust, sea, river, ymin, ymax, heat, humidity = unpack(attribs)
+	local name, stone, fill, top, dust, sea, river, riverbed, ymin, ymax, heat, humidity = unpack(attribs)
 
 	if #name > 0 and name:sub(1,1) ~= "#" then
 		-- Register biome
@@ -56,6 +56,12 @@ for line in file:lines() do
 
 		if river and #river > 0 then
 			biome.node_river_water = river
+		end
+
+		if riverbed and #riverbed > 0 then
+			riverbed = riverbed:split("%s", false, 1, true)
+			biome.node_riverbed = riverbed[1]
+			biome.depth_riverbed = tonumber(riverbed[2] or 1)
 		end
 
 		biome.y_min = tonumber(ymin) or -31000

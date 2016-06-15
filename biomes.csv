@@ -1,60 +1,60 @@
-#Open this file with a spreadsheet software,,,,,,,,,,
-#Use a leading '#' to disable a line,,,,,,,,,,
-#Blank cells are ignored,,,,,,,,,,
-,,,,,,,,,,
-#Name,Stone,Fill,Top,Dust,Sea,River,Elev_min,Elev_max,Heat,Humidity
-,,,,,,,,,,
-#Main biomes,,,,,,,,,,
-glacier_1,default:stone,,default:ice 2,default:snowblock,default:ice 2,default:ice,-6,31000,-11,20
-glacier_2,default:stone,default:ice 4,default:snowblock 3,default:snowblock,default:ice 6,default:ice,1,31000,-19,40
-glacier_3,default:stone,default:ice 12,default:snowblock 5,default:snowblock,default:ice 10,default:ice,1,31000,-27,80
-taiga,default:stone,default:dirt 5,default:dirt_with_snow,default:snow,,,4,31000,11,67
-tundra,default:stone,default:dirt 2,default:dirt_with_snow,,,,3,31000,4,32
-coniferous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,5,31000,22,71
-cold_gravel_desert,default:stone,default:gravel,default:gravel,default:snow,,,-6,31000,-2,2
-gravel_desert,default:stone,default:gravel 2,default:gravel,,,,2,31000,20,-2
-dry_tundra,default:stone,default:dirt 2,default:dirt_with_snow,,,,2,31000,4,12
-cold_desert,default:stone,,,,,,3,31000,32,-3
-swamp,default:stone,default:dirt 3,default:dirt_with_grass,,,,1,31000,30,114
-icy_swamp,default:stone,default:dirt 3,default:dirt_with_snow,default:snow,default:ice,default:ice,1,31000,-10,107
-stone_grasslands,default:stone,default:dirt,default:dirt_with_grass,,,,4,31000,29,22
-mixed_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,5,31000,24,56
-cold_deciduous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,4,31000,31,48
-deciduous_forest,default:stone,default:dirt 3,default:dirt_with_grass,,,,5,31000,45,65
-bushes,default:stone,default:dirt,default:dirt_with_grass,,,,7,31000,43,30
-scrub,default:stone,default:dirt,default:dirt_with_dry_grass,,,,8,31000,57,25
-hot_pine_forest,default:stone,default:dirt,default:dirt_with_grass,,,,6,31000,65,35
-desert,default:desert_stone,default:desert_sand 3,default:desert_sand,,,,7,31000,89,9
-sandstone_grasslands,default:sandstone,default:dirt 2,default:dirt_with_grass,,,,3,31000,55,15
-savanna,default:stone,default:dirt,default:dirt_with_dry_grass,,,,6,31000,80,24
-desert_stone_grasslands,default:desert_stone,default:dirt,default:dirt_with_grass,,,,4,31000,90,41
-red_savanna,default:desert_stone,default:dirt,default:dirt_with_dry_grass,,,,5,31000,90,31
-semi-tropical_forest,default:stone,default:dirt 3,default:dirt_with_grass,,,,4,31000,72,61
-rainforest,default:stone,default:dirt 4,default:dirt_with_grass,,,,1,31000,89,76
-sandstone_desert,default:sandstone,default:desert_sand,default:desert_sand,,,,6,31000,60,0
-orchard,default:stone,default:dirt 2,default:dirt_with_grass,,,,6,31000,40,40
-hot_deciduous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,5,31000,61,58
-hot_swamp,default:stone,default:dirt 4,default:dirt_with_grass,,,,1,31000,83,116
-,,,,,,,,,,
-#Beach biomes,,,,,,,,,,
-gravel_beach,default:stone,default:gravel 3,default:gravel,,,,-7,6,19,19
-sand_dunes,default:stone,default:sand 3,default:sand,,,,-5,5,21,61
-mangrove,default:stone,default:dirt 4,default:dirt,,,,-4,0,96,106
-desert_dunes,default:stone,default:sand 2,deault:sand,,,,-5,6,70,6
-hot_sand_dunes,default:stone,default:sand 3,default:sand,,,,-5,5,106,49
-tundra_dunes,default:stone,default:gravel,default:sand 2,default:snow,,,-5,2,5,21
-,,,,,,,,,,
-glacier_2_shore,default:stone,,default:ice 4,default:snowblock,default:ice 6,default:ice,-4,0,-19,40
-glacier_3_shore,default:stone,,default:ice 12,default:snowblock,default:ice 6,default:ice,-4,0,-27,80
-swamp_shore,default:stone,default:dirt 3,default:dirt,,,,-3,0,30,114
-icy_swamp_shore,default:stone,default:dirt 4,default:dirt 3,default:snow,default:ice,default:ice,-4,0,-10,107
-hot_swamp_shore,default:stone,default:dirt 4,default:dirt,,,,-3,0,83,116
-,,,,,,,,,,
-#Sea biomes,,,,,,,,,,
-pack_ice,default:stone,,default:gravel,default:snow,default:ice 5,default:ice,-112,-6,-24,41
-cold_sea,default:stone,,default:gravel 2,,,,-112,-6,20,47
-tempered_sea,default:stone,,default:sand 2,,,,-112,-6,41,48
-warm_sea,default:stone,default:sand 2,default:sand,,,,-112,-6,89,51
-,,,,,,,,,,
-#Underground,,,,,,,,,,
-underground,default:stone,,,,,,-31000,-113,50,50
+#Open this file with a spreadsheet software,,,,,,,,,,,
+#Use a leading '#' to disable a line,,,,,,,,,,,
+#Blank cells are ignored,,,,,,,,,,,
+,,,,,,,,,,,
+#Name,Stone,Fill,Top,Dust,Sea,River,Riverbed,Elev_min,Elev_max,Heat,Humidity
+,,,,,,,,,,,
+#Main biomes,,,,,,,,,,,
+glacier_1,default:stone,,default:ice 2,default:snowblock,default:ice 2,default:ice,,-6,31000,-11,20
+glacier_2,default:stone,default:ice 4,default:snowblock 3,default:snowblock,default:ice 6,default:ice,,1,31000,-19,40
+glacier_3,default:stone,default:ice 12,default:snowblock 5,default:snowblock,default:ice 10,default:ice,,1,31000,-27,80
+taiga,default:stone,default:dirt 5,default:dirt_with_snow,default:snow,,,default:gravel,4,31000,11,67
+tundra,default:stone,default:dirt 2,default:dirt_with_snow,,,,,3,31000,4,32
+coniferous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,default:gravel,5,31000,22,71
+cold_gravel_desert,default:stone,default:gravel,default:gravel,default:snow,,,default:gravel,-6,31000,-2,2
+gravel_desert,default:stone,default:gravel 2,default:gravel,,,,default:gravel 2,2,31000,20,-2
+dry_tundra,default:stone,default:dirt 2,default:dirt_with_snow,,,,,2,31000,4,12
+cold_desert,default:stone,,,,,,default:gravel,3,31000,32,-3
+swamp,default:stone,default:dirt 3,default:dirt_with_grass,,,,biomes:mud 2,1,31000,30,114
+icy_swamp,default:stone,default:dirt 3,default:dirt_with_snow,default:snow,default:ice,default:ice,biomes:mud 2,1,31000,-10,107
+stone_grasslands,default:stone,default:dirt,default:dirt_with_grass,,,,default:sand,4,31000,29,22
+mixed_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,default:dirt 2,5,31000,24,56
+cold_deciduous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,default:dirt 2,4,31000,31,48
+deciduous_forest,default:stone,default:dirt 3,default:dirt_with_grass,,,,default:dirt 3,5,31000,45,65
+bushes,default:stone,default:dirt,default:dirt_with_grass,,,,default:sand,7,31000,43,30
+scrub,default:stone,default:dirt,default:dirt_with_dry_grass,,,,default:sand,8,31000,57,25
+hot_pine_forest,default:stone,default:dirt,default:dirt_with_grass,,,,default:gravel,6,31000,65,35
+desert,default:desert_stone,default:desert_sand 3,default:desert_sand,,,,default:sand 3,7,31000,89,9
+sandstone_grasslands,default:sandstone,default:dirt 2,default:dirt_with_grass,,,,default:dirt 2,3,31000,55,15
+savanna,default:stone,default:dirt,default:dirt_with_dry_grass,,,,default:sand 2,6,31000,80,24
+desert_stone_grasslands,default:desert_stone,default:dirt,default:dirt_with_grass,,,,default:sand 2,4,31000,90,41
+red_savanna,default:desert_stone,default:dirt,default:dirt_with_dry_grass,,,,default:sand 2,5,31000,90,31
+semi-tropical_forest,default:stone,default:dirt 3,default:dirt_with_grass,,,,default:dirt 3,4,31000,72,61
+rainforest,default:stone,default:dirt 4,default:dirt_with_grass,,,,default:dirt 3,1,31000,89,76
+sandstone_desert,default:sandstone,default:desert_sand,default:desert_sand,,,,default:sand 2,6,31000,60,0
+orchard,default:stone,default:dirt 2,default:dirt_with_grass,,,,default:dirt,6,31000,40,40
+hot_deciduous_forest,default:stone,default:dirt 2,default:dirt_with_grass,,,,default:dirt 3,5,31000,61,58
+hot_swamp,default:stone,default:dirt 4,default:dirt_with_grass,,,,biomes:mud 3,1,31000,83,116
+,,,,,,,,,,,
+#Beach biomes,,,,,,,,,,,
+gravel_beach,default:stone,default:gravel 3,default:gravel,,,,default:gravel 3,-7,6,19,19
+sand_dunes,default:stone,default:sand 3,default:sand,,,,default:sand 4,-5,5,21,61
+mangrove,default:stone,default:dirt 4,default:dirt,,,,default:dirt 5,-4,0,96,106
+desert_dunes,default:stone,default:sand 2,deault:sand,,,,default:sand 3,-5,6,70,6
+hot_sand_dunes,default:stone,default:sand 3,default:sand,,,,default:sand 3,-5,5,106,49
+tundra_dunes,default:stone,default:gravel,default:sand 2,default:snow,,,default:gravel,-5,2,5,21
+,,,,,,,,,,,
+glacier_2_shore,default:stone,,default:ice 4,default:snowblock,default:ice 6,default:ice,,-4,0,-19,40
+glacier_3_shore,default:stone,,default:ice 12,default:snowblock,default:ice 6,default:ice,,-4,0,-27,80
+swamp_shore,default:stone,default:dirt 3,default:dirt,,,,biomes:mud 3,-3,0,30,114
+icy_swamp_shore,default:stone,default:dirt 4,default:dirt 3,default:snow,default:ice,default:ice,biomes:mud 3,-4,0,-10,107
+hot_swamp_shore,default:stone,default:dirt 4,default:dirt,,,,biomes:mud 3,-3,0,83,116
+,,,,,,,,,,,
+#Sea biomes,,,,,,,,,,,
+pack_ice,default:stone,,default:gravel,default:snow,default:ice 5,default:ice,,-112,-6,-24,41
+cold_sea,default:stone,,default:gravel 2,,,,,-112,-6,20,47
+tempered_sea,default:stone,,default:sand 2,,,,,-112,-6,41,48
+warm_sea,default:stone,default:sand 2,default:sand,,,,,-112,-6,89,51
+,,,,,,,,,,,
+#Underground,,,,,,,,,,,
+underground,default:stone,,,,,,,-31000,-113,50,50
