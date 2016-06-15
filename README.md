@@ -17,3 +17,6 @@ It was taken from GeoGebra, with the file `30-biomes.ggb` (GeoGebra diagram).
 
 ## Data structure
 The properties of each biome are stored in `biomes.csv`. You would find it awfully unreadable if you open it with a text editor. Actually you should open it with a spreadsheet software like Calc or Excel. To modify it, simply modify the cells and save the file with the same format.
+
+## License
+Under [WTFPL](http://www.wtfpl.net/txt/copying/).
