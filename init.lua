@@ -1,23 +1,7 @@
-local path = minetest.get_modpath("biomes")
+local path = minetest.get_modpath("30biomes")
 
 minetest.clear_registered_decorations()
 minetest.clear_registered_biomes()
-
-minetest.register_node("biomes:mud", {
-	description = "Mud",
-	tiles = {"biomes_mud.png"},
-	liquid_viscosity = 8,
-	liquidtype = "source",
-	liquid_renewable = false,
-	liquid_alternative_source = "biomes:mud",
-	liquid_alternative_flowing = "biomes:mud",
-	liquid_range = 0,
-	post_effect_color = {r=115, g=61, b=31, a=255},
-	drowning = 1,
-	walkable = false,
-	groups = {crumbly = 2},
-	sounds = default.node_sound_dirt_defaults(),
-})
 
 local file = io.open(path .. "/biomes.csv", "r")
 for line in file:lines() do
@@ -76,6 +60,8 @@ for line in file:lines() do
 end
 
 file:close()
+
+dofile(path .. "/nodes.lua")
 
 --dofile(path .. "/main_biomes.lua")
 --dofile(path .. "/beach_biomes.lua")

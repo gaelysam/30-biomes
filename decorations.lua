@@ -1,7 +1,10 @@
+local path = minetest.get_modpath("30biomes")
+local defaultpath = minetest.get_modpath("default")
+
 -- Mud in swamps
 minetest.register_ore({ 
 	ore_type = "blob",
-	ore = "biomes:mud",
+	ore = "30biomes:mud",
 	wherein = {"default:dirt", "default:dirt_with_grass"},
 	clust_scarcity = 12*12*12,
 	clust_size = 10,
@@ -43,7 +46,7 @@ minetest.register_ore({
 -- Jungle grass
 minetest.register_decoration({
 	deco_type = "simple",
-	place_on = {"default:dirt_with_grass", "biomes:mud"},
+	place_on = {"default:dirt_with_grass", "30biomes:mud"},
 	sidelen = 16,
 	noise_params = {
 		offset = 0.15,
@@ -172,7 +175,7 @@ minetest.register_decoration({
 	biomes = {"deciduous_forest", "cold_deciduous_forest", "orchard", "hot_deciduous_forest"},
 	y_min = 1,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/apple_tree.mts",
+	schematic = defaultpath.."/schematics/apple_tree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
@@ -225,7 +228,7 @@ minetest.register_decoration({
 	biomes = {"semi-tropical_forest", "mixed_forest"},
 	y_min = 1,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/apple_tree.mts",
+	schematic = defaultpath.."/schematics/apple_tree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
@@ -278,7 +281,7 @@ minetest.register_decoration({
 	biomes = {"rainforest", "mangrove"},
 	y_min = 0,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/jungle_tree.mts",
+	schematic = defaultpath.."/schematics/jungle_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
@@ -332,7 +335,7 @@ minetest.register_decoration({
 	biomes = {"semi-tropical_forest"},
 	y_min = 0,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/jungle_tree.mts",
+	schematic = defaultpath.."/schematics/jungle_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
@@ -383,10 +386,10 @@ minetest.register_decoration({
 		octaves = 3,
 		persist = 0.66
 	},
-	biomes = {"taiga", "coniferous_forest"},
+	biomes = {"hot_pine_forest"},
 	y_min = 2,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/pine_tree.mts",
+	schematic = path.."/schematics/pine_tree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
@@ -402,7 +405,7 @@ minetest.register_decoration({
 		octaves = 3,
 		persist = 0.66
 	},
-	biomes = {"taiga", "coniferous_forest"},
+	biomes = {"hot_pine_forest"},
 	y_min = 1,
 	y_max = 31000,
 	schematic = {
@@ -436,10 +439,116 @@ minetest.register_decoration({
 		octaves = 3,
 		persist = 0.66
 	},
+	biomes = {"hot_deciduous_forest", "scrub"},
+	y_min = 2,
+	y_max = 31000,
+	schematic = path.."/schematics/pine_tree.mts",
+	flags = "place_center_x, place_center_z",
+})
+
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.001,
+		scale = -0.001,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"hot_deciduous_forest", "scrub"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "default:pine_tree", param2 = 12, prob = 191},
+			{name = "default:pine_tree", param2 = 12},
+			{name = "default:pine_tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_red", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Fir tree and log
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.036,
+		scale = 0.022,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"taiga", "coniferous_forest"},
+	y_min = 2,
+	y_max = 31000,
+	schematic = path.."/schematics/fir_tree.mts",
+	flags = "place_center_x, place_center_z",
+})
+
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.0018,
+		scale = 0.0011,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 2,
+		octaves = 3,
+		persist = 0.66
+	},
+	biomes = {"taiga", "coniferous_forest"},
+	y_min = 1,
+	y_max = 31000,
+	schematic = {
+		size = {x = 3, y = 3, z = 1},
+		data = {
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "air", prob = 0},
+			{name = "30biomes:fir_tree", param2 = 12, prob = 191},
+			{name = "30biomes:fir_tree", param2 = 12},
+			{name = "30biomes:fir_tree", param2 = 12, prob = 127},
+			{name = "air", prob = 0},
+			{name = "flowers:mushroom_red", prob = 63},
+			{name = "air", prob = 0},
+		},
+	},
+	flags = "place_center_x",
+	rotation = "random",
+})
+
+-- Rarer fir tree and log
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0.020,
+		scale = -0.020,
+		spread = {x = 250, y = 250, z = 250},
+		seed = 45,
+		octaves = 3,
+		persist = 0.66
+	},
 	biomes = {"mixed_forest"},
 	y_min = 2,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/pine_tree.mts",
+	schematic = path.."/schematics/fir_tree.mts",
 	flags = "place_center_x, place_center_z",
 })
 
@@ -464,9 +573,9 @@ minetest.register_decoration({
 			{name = "air", prob = 0},
 			{name = "air", prob = 0},
 			{name = "air", prob = 0},
-			{name = "default:pine_tree", param2 = 12, prob = 191},
-			{name = "default:pine_tree", param2 = 12},
-			{name = "default:pine_tree", param2 = 12, prob = 127},
+			{name = "30biomes:fir_tree", param2 = 12, prob = 191},
+			{name = "30biomes:fir_tree", param2 = 12},
+			{name = "30biomes:fir_tree", param2 = 12, prob = 127},
 			{name = "air", prob = 0},
 			{name = "flowers:mushroom_red", prob = 63},
 			{name = "air", prob = 0},
@@ -492,7 +601,7 @@ minetest.register_decoration({
 	biomes = {"savanna", "red_savanna"},
 	y_min = 1,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/acacia_tree.mts",
+	schematic = defaultpath.."/schematics/acacia_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
@@ -543,7 +652,7 @@ minetest.register_decoration({
 	biomes = {"cold_deciduous_forest", "mixed_forest"},
 	y_min = 1,
 	y_max = 31000,
-	schematic = minetest.get_modpath("default").."/schematics/aspen_tree.mts",
+	schematic = defaultpath.."/schematics/aspen_tree.mts",
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
@@ -597,7 +706,7 @@ minetest.register_decoration({
 	biomes = {"swamp_shore", "hot_swamp_shore", "mangrove"},
 	y_min = 0,
 	y_max = 0,
-	schematic = minetest.get_modpath("default").."/schematics/papyrus.mts",
+	schematic = defaultpath.."/schematics/papyrus.mts",
 })
 
 -- Cactus
