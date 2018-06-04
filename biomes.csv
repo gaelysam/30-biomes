@@ -40,7 +40,7 @@ hot_swamp,default:stone,default:dirt 4,default:dirt_with_grass,,,,biomes:mud 3,1
 gravel_beach,default:stone,default:gravel 3,default:gravel,,,,default:gravel 3,-7,6,19,19
 sand_dunes,default:stone,default:sand 3,default:sand,,,,default:sand 4,-5,5,21,61
 mangrove,default:stone,default:dirt 4,default:dirt,,,,default:dirt 5,-4,0,96,106
-desert_dunes,default:stone,default:sand 2,deault:sand,,,,default:sand 3,-5,6,70,6
+desert_dunes,default:stone,default:sand 2,default:sand,,,,default:sand 3,-5,6,70,6
 hot_sand_dunes,default:stone,default:sand 3,default:sand,,,,default:sand 3,-5,5,106,49
 tundra_dunes,default:stone,default:gravel,default:sand 2,default:snow,,,default:gravel,-5,2,5,21
 ,,,,,,,,,,,
